@@ -1,0 +1,254 @@
+[
+  {
+    "event_id": "CONJ-2026-1000",
+    "primary_object": {
+      "norad_id": 62083,
+      "name": "UK-SAT 83",
+      "type": "PAYLOAD",
+      "owner": "UK"
+    },
+    "secondary_object": {
+      "norad_id": 61581,
+      "name": "PRC DEBRIS #5026",
+      "type": "DEBRIS",
+      "owner": "PRC"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T23:24:00Z",
+    "miss_distance_m": 576.2,
+    "relative_velocity_kms": 13.4,
+    "collision_probability": "9.25e-32",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1001",
+    "primary_object": {
+      "norad_id": 60912,
+      "name": "ESA-SAT 56",
+      "type": "PAYLOAD",
+      "owner": "ESA"
+    },
+    "secondary_object": {
+      "norad_id": 63385,
+      "name": "UK DEBRIS #5802",
+      "type": "DEBRIS",
+      "owner": "UK"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T02:03:00Z",
+    "miss_distance_m": 1413.7,
+    "relative_velocity_kms": 9.66,
+    "collision_probability": "1.63e-176",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1002",
+    "primary_object": {
+      "norad_id": 62122,
+      "name": "JPN-SAT 71",
+      "type": "PAYLOAD",
+      "owner": "JPN"
+    },
+    "secondary_object": {
+      "norad_id": 63447,
+      "name": "ESA DEBRIS #2659",
+      "type": "DEBRIS",
+      "owner": "ESA"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T14:29:00Z",
+    "miss_distance_m": 1005.2,
+    "relative_velocity_kms": 8.22,
+    "collision_probability": "1.09e-90",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1003",
+    "primary_object": {
+      "norad_id": 62936,
+      "name": "USA-SAT 26",
+      "type": "PAYLOAD",
+      "owner": "USA"
+    },
+    "secondary_object": {
+      "norad_id": 61604,
+      "name": "OTH DEBRIS #6473",
+      "type": "DEBRIS",
+      "owner": "OTH"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T10:54:00Z",
+    "miss_distance_m": 904.3,
+    "relative_velocity_kms": 10.94,
+    "collision_probability": "5.95e-74",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1004",
+    "primary_object": {
+      "norad_id": 61449,
+      "name": "UK-SAT 76",
+      "type": "PAYLOAD",
+      "owner": "UK"
+    },
+    "secondary_object": {
+      "norad_id": 63214,
+      "name": "JPN DEBRIS #6784",
+      "type": "DEBRIS",
+      "owner": "JPN"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T04:14:00Z",
+    "miss_distance_m": 1294.9,
+    "relative_velocity_kms": 11.53,
+    "collision_probability": "1.45e-148",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1005",
+    "primary_object": {
+      "norad_id": 62931,
+      "name": "GER-SAT 43",
+      "type": "PAYLOAD",
+      "owner": "GER"
+    },
+    "secondary_object": {
+      "norad_id": 60408,
+      "name": "ESA DEBRIS #9158",
+      "type": "DEBRIS",
+      "owner": "ESA"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T01:18:00Z",
+    "miss_distance_m": 602.4,
+    "relative_velocity_kms": 8.56,
+    "collision_probability": "1.92e-34",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1006",
+    "primary_object": {
+      "norad_id": 63042,
+      "name": "FRA-SAT 92",
+      "type": "PAYLOAD",
+      "owner": "FRA"
+    },
+    "secondary_object": {
+      "norad_id": 60615,
+      "name": "IND DEBRIS #3897",
+      "type": "DEBRIS",
+      "owner": "IND"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T16:59:00Z",
+    "miss_distance_m": 423.5,
+    "relative_velocity_kms": 12.18,
+    "collision_probability": "1.68e-18",
+    "risk_level": "HIGH",
+    "recommended_action": "Execute Collision Avoidance Manoeuvre (COLA)"
+  },
+  {
+    "event_id": "CONJ-2026-1007",
+    "primary_object": {
+      "norad_id": 61662,
+      "name": "ESA-SAT 81",
+      "type": "PAYLOAD",
+      "owner": "ESA"
+    },
+    "secondary_object": {
+      "norad_id": 62631,
+      "name": "JPN DEBRIS #1365",
+      "type": "DEBRIS",
+      "owner": "JPN"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T06:34:00Z",
+    "miss_distance_m": 1230.1,
+    "relative_velocity_kms": 9.23,
+    "collision_probability": "2.36e-134",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1008",
+    "primary_object": {
+      "norad_id": 63279,
+      "name": "OTH-SAT 58",
+      "type": "PAYLOAD",
+      "owner": "OTH"
+    },
+    "secondary_object": {
+      "norad_id": 61475,
+      "name": "PRC DEBRIS #6613",
+      "type": "DEBRIS",
+      "owner": "PRC"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T18:03:00Z",
+    "miss_distance_m": 172.7,
+    "relative_velocity_kms": 11.14,
+    "collision_probability": "1.63e-05",
+    "risk_level": "HIGH",
+    "recommended_action": "Execute Collision Avoidance Manoeuvre (COLA)"
+  },
+  {
+    "event_id": "CONJ-2026-1009",
+    "primary_object": {
+      "norad_id": 60073,
+      "name": "JPN-SAT 66",
+      "type": "PAYLOAD",
+      "owner": "JPN"
+    },
+    "secondary_object": {
+      "norad_id": 61465,
+      "name": "OTH DEBRIS #6541",
+      "type": "DEBRIS",
+      "owner": "OTH"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T21:19:00Z",
+    "miss_distance_m": 664.0,
+    "relative_velocity_kms": 14.22,
+    "collision_probability": "3.22e-41",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1010",
+    "primary_object": {
+      "norad_id": 63119,
+      "name": "OTH-SAT 85",
+      "type": "PAYLOAD",
+      "owner": "OTH"
+    },
+    "secondary_object": {
+      "norad_id": 63082,
+      "name": "FRA DEBRIS #2292",
+      "type": "DEBRIS",
+      "owner": "FRA"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T18:42:00Z",
+    "miss_distance_m": 1260.6,
+    "relative_velocity_kms": 12.89,
+    "collision_probability": "5.96e-141",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  },
+  {
+    "event_id": "CONJ-2026-1011",
+    "primary_object": {
+      "norad_id": 61185,
+      "name": "JPN-SAT 79",
+      "type": "PAYLOAD",
+      "owner": "JPN"
+    },
+    "secondary_object": {
+      "norad_id": 60740,
+      "name": "GER DEBRIS #6182",
+      "type": "DEBRIS",
+      "owner": "GER"
+    },
+    "time_to_closest_approach_utc": "2026-07-23 T02:12:00Z",
+    "miss_distance_m": 1056.0,
+    "relative_velocity_kms": 14.68,
+    "collision_probability": "8.80e-100",
+    "risk_level": "MEDIUM",
+    "recommended_action": "Monitor via SGP4 tracking"
+  }
+]

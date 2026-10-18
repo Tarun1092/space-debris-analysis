@@ -1,0 +1,86 @@
+{
+  "total_tracked_objects": 3500,
+  "active_satellites": 739,
+  "tracked_debris_pieces": 2271,
+  "rocket_bodies": 402,
+  "by_object_type": {
+    "PAYLOAD": 739,
+    "DEBRIS": 2271,
+    "ROCKET BODY": 402,
+    "UNKNOWN": 88
+  },
+  "by_orbit_regime": {
+    "LEO": 2701,
+    "GEO": 432,
+    "HEO": 73,
+    "MEO": 294
+  },
+  "by_country": {
+    "USA/CIS": 1,
+    "USA": 350,
+    "IND": 372,
+    "UK": 342,
+    "ESA": 356,
+    "PRC": 367,
+    "CIS": 333,
+    "GER": 335,
+    "OTH": 351,
+    "JPN": 332,
+    "FRA": 361
+  },
+  "by_rcs_size": {
+    "LARGE": 798,
+    "MEDIUM": 924,
+    "SMALL": 1778
+  },
+  "leo_altitude_distribution": {
+    "bin_width_km": 100,
+    "bins": [
+      "0-100 km",
+      "100-200 km",
+      "200-300 km",
+      "300-400 km",
+      "400-500 km",
+      "500-600 km",
+      "600-700 km",
+      "700-800 km",
+      "800-900 km",
+      "900-1000 km",
+      "1000-1100 km",
+      "1100-1200 km",
+      "1200-1300 km",
+      "1300-1400 km",
+      "1400-1500 km",
+      "1500-1600 km",
+      "1600-1700 km",
+      "1700-1800 km",
+      "1800-1900 km",
+      "1900-2000 km"
+    ],
+    "counts": [
+      0,
+      0,
+      0,
+      30,
+      325,
+      900,
+      121,
+      514,
+      487,
+      66,
+      33,
+      40,
+      35,
+      29,
+      40,
+      27,
+      32,
+      24,
+      1,
+      0
+    ]
+  },
+  "kessler_syndrome_risk_index": 7.42,
+  "isro_monitored_conjunctions_2023_2024": 137,
+  "esa_discos_catalogued_mass_tonnes": 11500
+}

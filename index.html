@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrbitalGuard AI | Interactive Space Debris & Satellite Analytics Dashboard</title>
+    <meta name="description" content="3D interactive visualization and space situational awareness analytics engine tracking space debris, satellites, and orbital parameters.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- Background Starfield Canvas Overlay -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="app-container">
+        <!-- Header Navbar -->
+        <header class="navbar">
+            <div class="nav-brand">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-satellite-dish"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>ORBITAL<span>GUARD</span> <span class="badge-ai">AI SSA Engine</span></h1>
+                    <p>Space Situational Awareness & Debris Analytics Platform</p>
+                </div>
+            </div>
+
+            <!-- Global Live Statistics Strip -->
+            <div class="nav-stats">
+                <div class="stat-pill">
+                    <span class="stat-label"><i class="fa-solid fa-globe"></i> Tracked Objects</span>
+                    <span class="stat-value" id="nav-stat-total">3,500</span>
+                </div>
+                <div class="stat-pill warning">
+                    <span class="stat-label"><i class="fa-solid fa-triangle-exclamation"></i> Active Debris</span>
+                    <span class="stat-value" id="nav-stat-debris">2,275</span>
+                </div>
+                <div class="stat-pill active">
+                    <span class="stat-label"><i class="fa-solid fa-satellite"></i> Active Satellites</span>
+                    <span class="stat-value" id="nav-stat-payloads">710</span>
+                </div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <nav class="nav-tabs">
+                <button class="tab-btn active" data-tab="tab-3d"><i class="fa-solid fa-earth-americas"></i> 3D Orbital View</button>
+                <button class="tab-btn" data-tab="tab-analytics"><i class="fa-solid fa-chart-column"></i> Debris Analytics</button>
+            </nav>
+        </header>
+
+        <!-- Main Dashboard Viewports -->
+        <main class="main-content">
+            
+            <!-- TAB 1: 3D ROTATORY EARTH VISUALIZER -->
+            <section id="tab-3d" class="tab-pane active">
+                <div class="viewport-layout">
+                    <!-- Left: 3D WebGL Canvas Container -->
+                    <div class="webgl-container">
+                        <div id="canvas-3d"></div>
+
+                        <!-- On-Screen 3D Overlay Controls -->
+                        <div class="overlay-controls">
+                            <div class="control-group">
+                                <button id="btn-toggle-rotation" class="ctrl-btn active" title="Toggle Earth Auto-Rotation">
+                                    <i class="fa-solid fa-arrows-rotate"></i> Auto Rotation: ON
+                                </button>
+                                <button id="btn-reset-view" class="ctrl-btn" title="Reset Camera View">
+                                    <i class="fa-solid fa-compress"></i> Reset View
+                                </button>
+                                <button id="btn-toggle-orbits" class="ctrl-btn active" title="Toggle Trajectory Lines">
+                                    <i class="fa-solid fa-route"></i> Orbit Trajectories
+                                </button>
+                            </div>
+
+                            <div class="control-group">
+                                <button id="btn-toggle-shells" class="ctrl-btn active" title="Toggle LEO/GEO Shell Boundaries">
+                                    <i class="fa-solid fa-circle-nodes"></i> LEO/GEO Shells: ON
+                                </button>
+                                <button id="btn-toggle-rings" class="ctrl-btn active" title="Toggle Historical Breakup Debris Rings">
+                                    <i class="fa-solid fa-ring"></i> Debris Rings: ON
+                                </button>
+                                <button id="btn-toggle-clouds" class="ctrl-btn active" title="Toggle Atmospheric Clouds">
+                                    <i class="fa-solid fa-cloud"></i> Clouds: ON
+                                </button>
+                            </div>
+
+                            <div class="filter-pills">
+                                <span class="filter-label">Object Category:</span>
+                                <button class="filter-chip active" data-filter="ALL">All Objects (3,500)</button>
+                                <button class="filter-chip payload" data-filter="PAYLOAD"><i class="fa-solid fa-satellite"></i> Payloads</button>
+                                <button class="filter-chip debris" data-filter="DEBRIS"><i class="fa-solid fa-shredder"></i> Debris</button>
+                                <button class="filter-chip rocket" data-filter="ROCKET BODY"><i class="fa-solid fa-rocket"></i> Rocket Bodies</button>
+                            </div>
+                        </div>
+
+                        <!-- Legend Overlay -->
+                        <div class="globe-legend">
+                            <div class="legend-item"><span class="dot payload"></span> Active Satellites</div>
+                            <div class="legend-item"><span class="dot debris"></span> Space Debris</div>
+                            <div class="legend-item"><span class="dot rocket"></span> Spent Rocket Bodies</div>
+                            <div class="legend-item"><span class="dot isro"></span> ISRO Assets</div>
+                            <div class="legend-item"><span class="dot leo-shell"></span> LEO Shell (2,000km)</div>
+                            <div class="legend-item"><span class="dot geo-ring"></span> GEO Belt (35,786km)</div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Altitude Slider Filter Panel -->
+                    <aside class="inspector-panel">
+                        <div class="panel-card search-card">
+                            <h3><i class="fa-solid fa-sliders"></i> Altitude Filter</h3>
+                            <div class="filter-sliders">
+                                <div class="slider-group">
+                                    <label>Orbit Altitude Limit: <span id="alt-val-label">200 km - 36,000 km</span></label>
+                                    <input type="range" id="alt-slider" min="200" max="36000" step="100" value="36000">
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- TAB 2: DEBRIS ANALYTICS & STATISTICS -->
+            <section id="tab-analytics" class="tab-pane">
+                <div class="analytics-grid">
+                    <!-- Row 1: Summary Cards -->
+                    <div class="metric-card">
+                        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <div class="card-data">
+                            <h4>LEO Density Peak</h4>
+                            <p class="metric-val">750 - 900 km</p>
+                            <span class="metric-sub">Sun-Synchronous Polar Shells</span>
+                        </div>
+                    </div>
+                    <div class="metric-card warning">
+                        <div class="card-icon"><i class="fa-solid fa-dumpster-fire"></i></div>
+                        <div class="card-data">
+                            <h4>Kessler Risk Index</h4>
+                            <p class="metric-val">7.42 / 10</p>
+                            <span class="metric-sub">Elevated Cascading Threat</span>
+                        </div>
+                    </div>
+                    <div class="metric-card isro-card">
+                        <div class="card-icon"><i class="fa-solid fa-flag"></i></div>
+                        <div class="card-data">
+                            <h4>ISRO Monitored Events</h4>
+                            <p class="metric-val">137 COLA Alerts</p>
+                            <span class="metric-sub">ISSAR 2023/2024 Report</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="card-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                        <div class="card-data">
+                            <h4>Total Orbital Mass</h4>
+                            <p class="metric-val">11,500 Tonnes</p>
+                            <span class="metric-sub">ESA DISCOS Catalog Spec</span>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Charts -->
+                    <div class="chart-card full-width">
+                        <h3><i class="fa-solid fa-chart-line"></i> Altitude Spatial Density Distribution (0 - 2,000 km LEO)</h3>
+                        <div class="chart-container">
+                            <canvas id="chart-altitude"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3><i class="fa-solid fa-pie-chart"></i> Distribution by Object Type</h3>
+                        <div class="chart-container">
+                            <canvas id="chart-type"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3><i class="fa-solid fa-globe-asia"></i> Catalog Share by Country / Agency</h3>
+                        <div class="chart-container">
+                            <canvas id="chart-country"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Application Javascript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>

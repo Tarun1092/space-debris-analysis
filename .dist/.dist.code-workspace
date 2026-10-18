@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../data"
+		},
+		{
+			"path": "../figures"
+		},
+		{
+			"path": "../r_analytics_dashboard_files"
+		},
+		{
+			"path": "../r_debris_globe_3d_files"
+		},
+		{
+			"path": "../scripts"
+		}
+	]
+}
